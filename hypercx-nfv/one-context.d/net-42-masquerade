@@ -47,3 +47,4 @@ configure_ipv6_masquerade(){
 echo "=========================MASQUERADE========================" >> /etc/motd        
 reset_iptables
 create_masquerade
+crontab -l | { cat; echo "@reboot /etc/one-context.d/net-42-masquerade >> /dev/null"; } | crontab -
